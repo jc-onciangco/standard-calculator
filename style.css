@@ -1,0 +1,334 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background-image: url(https://images.pexels.com/photos/1019470/abacus-mathematics-addition-subtraction-1019470.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wallpaper-logo{
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.wallpapers{
+  color: white;
+  padding: 3px 4px;
+  background-color: orange;
+  border-radius: 0 5px 5px 0;
+  display: none;
+}
+
+.wallpaper{
+  cursor: pointer;
+  margin: 0 2px;
+  padding: 2px 6px;
+}
+
+.wallpaper:hover{
+  color: black;
+  background-color: rgba(255,255,255,0.4);
+}
+
+.shoWallpaper{
+  display: inline-block;
+}
+
+ .des-con{
+  padding: 5px;
+  border: 5px solid rgba(0,0,0,0.4);
+   margin-top: 10px;
+}
+
+.title{
+  color: white;
+  font-weight: semi-bold;
+  margin-bottom: 5px;
+}
+
+.calculator{
+  background-color: #E1DEE7;
+  padding:16px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, .3);
+  backdrop-filter: blur(5px);
+/*   background-color: #5C5C5C; */
+/*   animation-name: changeBg;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  transition: 1s linear; */
+}
+
+.left-side{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-side{
+  flex: 1;
+  margin-left:16px
+}
+.right-side .labels{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clr-history{
+  background-color: rgba(233, 56, 55,0.5);
+  backdrop-filter: blur(5px);
+  color:white;
+  padding: 3px 9px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.history-label{
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  color: white;
+  margin-right: 6px;
+}
+.right-side ul{
+  list-style: none;
+  overflow-y: scroll;
+  padding-right: 8px;
+  height: 250px;
+  margin-top: 10px;
+}
+.right-side ul li{
+  color: white;
+  margin: 2px 0px;
+  text-align: right;
+  font-weight: lighter;
+}
+.right-side ul li .ans{
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.solution{
+  border: 1px solid white;
+  background-color: transparent;
+  margin-bottom:15px;
+  font-size: 1rem;
+  width: 300px;
+  height: 1.4rem;
+  padding-left: 3px;
+  border:none;
+  border-bottom: 1px solid white;
+  color: rgba(255,255,255,0.6);
+}
+
+.buttons{
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  grid-template-rows: auto;
+  grid-gap: 5px;
+  grid-template-areas:
+  "spc1 spc2 del clr"
+  "seven eight nine divide"
+  "four five six times"
+  "one two three minus"
+  "dec zero equal plus";
+  font-size: 1.5rem;
+  margin-top: 8px
+}
+
+.digit, .equal, .decimal{
+  padding: 4px;
+  background-color: rgba(0, 0, 0, .1);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+.digit:hover, .decimal:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.equal{
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+.equal:hover{
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.operation{
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+.operation:hover{
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.bs-btn{
+  padding: 4px;
+  background-color: rgba(233, 56, 55,0.5);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.bs-btn:hover{
+  background-color: rgba(233, 56, 55,0.7);
+}
+
+.calc-screen{
+  margin-bottom: 5px;
+  padding: 1px;
+  outline: none;
+  text-align: right;
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  color: white;
+}
+
+/* .clear{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.clear .clear{
+  outline: none;
+  padding: 3px;
+  text-align: center;
+  color: coral;
+  border-radius: 3px;
+  border: none;
+} */
+
+/* .clear .delete{
+  outline: none;
+  padding: 3px;
+  text-align: center;
+  color: coral;
+  border-radius: 3px;
+  border: none;
+  margin-right: 5px;
+} */
+
+.active{
+  background-color: white;
+  color: black;
+}
+
+
+.dig-1{
+  grid-area: one;
+}
+.dig-2{
+  grid-area: two;
+}
+.dig-3{
+  grid-area: three;
+}
+.dig-4{
+  grid-area: four;
+}
+.dig-5{
+  grid-area: five;
+}
+.dig-6{
+  grid-area: six;
+}
+.dig-7{
+  grid-area: seven;
+}
+.dig-8{
+  grid-area: eight;
+}
+.dig-9{
+  grid-area: nine;
+}
+.dig-0{
+  grid-area: zero;
+}
+.decimal{
+  grid-area: dec;
+}
+.op-plus{
+  grid-area: plus;
+}
+.op-minus{
+  grid-area: minus;
+}
+.op-times{
+  grid-area: times;
+}
+.op-divide{
+  grid-area: divide;
+}
+.equal{
+  grid-area: equal;
+}
+.clear{
+  grid-area: clr;
+  padding-top: 5px;
+}
+.delete{
+  grid-area: del;
+  padding-top: 5px;
+}
+.spacer1{
+  grid-area: spc1;
+}
+.spacer2{
+  grid-area: spc2;
+}
+
+@keyframes changeBg {
+  from{
+    background-color: #FFBED2;
+  }
+
+  to{
+    background-color: #FF00FF;
+  }
+}

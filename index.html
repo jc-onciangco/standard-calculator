@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+  <span @click="show" class="wallpaper-logo">WALLPAPER</span>
+  <span class="wallpapers" :class="{shoWallpaper:showWallpapers}">
+    <span @click="changeWallpaper('wooden')" class="wallpaper wooden">WOODEN</span>
+    <span @click="changeWallpaper('crumbledPaper')" class="wallpaper crumbled-paper">CRUMBLED PAPER</span>
+    <span @click="changeWallpaper('blueTextile')" class="wallpaper blue-textile">BLUE TEXTILE</span>
+    <span @click="changeWallpaper('blueWater')" class="wallpaper blue-textile">BLUE WATER</span>
+    <span @click="changeWallpaper('forest')" class="wallpaper blue-textile">FOREST</span>
+  </span>
+  <div class="des-con">
+     <div class="calculator">
+  <div class="left-side">
+        <div class="title">STANDARD CALCULATOR</div>
+       <div class="solution">{{solution}}</div>
+    <input v-model="screen" type="text" class="calc-screen" readonly>
+<!--     <div class="clear">
+      <button  class="delete">del</button>
+      <button  class="clear">CL</button>
+    </div> -->
+    <div class="buttons">
+      <div class="spacer1"></div>
+      <div class="spacer2"></div>
+      <div @click="deleteDigit" class="bs-btn delete">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="20" height="20"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M43.14781,34.4l-44.23625,51.6l44.23625,51.6h115.09219c7.56531,0 13.76,-6.19469 13.76,-13.76v-75.68c0,-7.56531 -6.19469,-13.76 -13.76,-13.76zM46.29219,41.28h111.94781c3.84313,0 6.88,3.03688 6.88,6.88v75.68c0,3.84313 -3.03687,6.88 -6.88,6.88h-111.93437l-38.33719,-44.72zM78.11219,62.92781l-4.86437,4.86437l18.20781,18.20781l-18.20781,18.20781l4.86437,4.86437l18.20781,-18.20781l18.20781,18.20781l4.86437,-4.86437l-18.20781,-18.20781l18.20781,-18.20781l-4.86437,-4.86437l-18.20781,18.20781z"></path></g></g></svg>
+      </div>
+      <div @click="clear" class="bs-btn clear">C</div>
+      <div @click="writeDigit(1)" class="digit dig-1">1</div>
+      <div @click="writeDigit(2)" class="digit dig-2">2</div>
+      <div @click="writeDigit(3)" class="digit dig-3">3</div>
+      <div @click="writeDigit(4)" class="digit dig-4">4</div>
+      <div @click="writeDigit(5)" class="digit dig-5">5</div>
+      <div @click="writeDigit(6)" class="digit dig-6">6</div>
+      <div @click="writeDigit(7)" class="digit dig-7">7</div>
+      <div @click="writeDigit(8)" class="digit dig-8">8</div>
+      <div @click="writeDigit(9)" class="digit dig-9">9</div>
+      <div @click="writeDigit(0)" class="digit dig-0">0</div>
+      <div @click="writeDigit('.')" class="decimal">.</div>
+      <div @click="op('+')" class="operation op-plus" :class="{active:chosenOperation==='+'}">+</div>
+      <div @click="op('-')" class="operation op-minus" :class="{active:chosenOperation==='-'}">-</div>
+      <div @click="op('*')" class="operation op-times" :class="{active:chosenOperation==='*'}">&times</div>
+      <div @click="op('/')" class="operation op-divide" :class="{active:chosenOperation==='/'}">&divide</div>
+      <div @click="equal()" class="equal" :class="{active:chosenOperation==='equal'}">=</div>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="labels">
+      <span class="history-label">HISTORY</span>
+      <div @click="clearHistory" class="clr-history">clear</div>
+    </div>
+    <ul class="histories" >
+      <li v-for="history in histories">{{history.solution}}<span class="ans">{{history.answer}}</span></li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
